@@ -743,3 +743,169 @@ img {
   border-color: #3b82f6;
   color: #ffffff;
 }
+
+/* ==================================================
+   20. 이용약관 / 개인정보처리방침 페이지
+================================================== */
+
+.legal-content {
+  display: block;
+  width: min(900px, calc(100% - 48px));
+  margin: 64px auto 80px;
+  padding: 48px 56px;
+
+  background: #10182b;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 20px;
+
+  box-shadow: 0 18px 50px rgba(0,0,0,.22);
+
+  color: #cbd5e1;
+  overflow-wrap: anywhere;
+}
+
+/* 상단 LEGAL 문구 */
+
+.legal-content .eyebrow {
+  margin: 0 0 12px;
+
+  color: #83b8ff;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+/* 페이지 제목 */
+
+.legal-content h1 {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+/* 시행 날짜 */
+
+.legal-content .updated {
+  margin: 0 0 34px;
+
+  color: #8995a9;
+  font-size: .9rem;
+}
+
+/* 소제목 */
+
+.legal-content h2 {
+  margin: 34px 0 12px;
+
+  color: #ffffff;
+  font-size: 1.22rem;
+  line-height: 1.4;
+}
+
+/* 본문 */
+
+.legal-content p,
+.legal-content li {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.legal-content p {
+  margin: 0 0 16px;
+}
+
+/* 목록 */
+
+.legal-content ul {
+  margin: 12px 0 22px;
+  padding-left: 24px;
+}
+
+.legal-content li {
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+/* 이메일 및 링크 */
+
+.legal-content a {
+  color: #83b8ff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-content a:hover {
+  color: #ffffff;
+}
+
+/* 하단 안내 문구 */
+
+.legal-content .notice {
+  max-width: none;
+  margin: 36px 0 0;
+  padding: 18px 20px;
+
+  background: rgba(59,130,246,.08);
+  border: 1px solid rgba(131,184,255,.2);
+  border-left: 3px solid #60a5fa;
+  border-radius: 12px;
+
+  color: #b9c5d8;
+  font-size: .9rem;
+}
+
+/* 하단 푸터 링크 */
+
+.site-footer .footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.site-footer .footer-links a {
+  color: #aab5c7;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.site-footer .footer-links a:hover {
+  color: #ffffff;
+}
+
+/* ==================================================
+   21. 법률 페이지 모바일 반응형
+================================================== */
+
+@media (max-width: 600px) {
+
+  .legal-content {
+    width: calc(100% - 28px);
+    margin: 28px auto 44px;
+    padding: 30px 22px;
+    border-radius: 16px;
+  }
+
+  .legal-content h1 {
+    font-size: 2rem;
+  }
+
+  .legal-content h2 {
+    margin-top: 28px;
+    font-size: 1.1rem;
+  }
+
+  .legal-content p,
+  .legal-content li {
+    font-size: .95rem;
+  }
+
+  .site-footer .footer-links {
+    gap: 14px;
+  }
+}
