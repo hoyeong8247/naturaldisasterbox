@@ -702,3 +702,44 @@ img {
   }
 }
 
+
+/* ==================================================
+   로그인 / 회원가입 페이지 이동
+================================================== */
+
+.auth-switch {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.auth-switch p {
+  margin: 0 0 10px;
+  color: #aab5c7;
+  font-size: .9rem;
+}
+
+.auth-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 180px;
+  padding: 11px 22px;
+
+  background: transparent;
+  color: #83b8ff;
+
+  border: 1px solid #83b8ff;
+  border-radius: 9px;
+
+  font-size: .95rem;
+  font-weight: 800;
+
+  transition: all .2s ease;
+}
+
+.auth-switch a:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
