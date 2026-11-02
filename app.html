@@ -1,0 +1,207 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NaturalDisasterBox App Demo">
+  <title>Open App — NaturalDisasterBox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="app-page">
+
+  <header class="site-header">
+    <a class="brand" href="index.html">NaturalDisasterBox</a>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="auth-container">
+    <div class="auth-card">
+
+      <div class="auth-heading">
+        <p class="eyebrow">NATURALDISASTERBOX APP</p>
+        <h1>Welcome</h1>
+        <p>Sign in to continue to NaturalDisasterBox.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button type="button" id="loginTab" class="active">
+          Log In
+        </button>
+        <button type="button" id="signupTab">
+          Sign Up
+        </button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="auth-form">
+
+        <label for="loginEmail">Email Address</label>
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="loginPassword">Password</label>
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
+          minlength="8"
+        >
+
+        <button type="submit" class="auth-submit">
+          Log In
+        </button>
+
+      </form>
+
+      <!-- SIGN UP FORM -->
+      <form id="signupForm" class="auth-form" hidden>
+
+        <label for="signupName">Full Name</label>
+        <input
+          type="text"
+          id="signupName"
+          placeholder="Your name"
+          autocomplete="name"
+          required
+        >
+
+        <label for="signupEmail">Email Address</label>
+        <input
+          type="email"
+          id="signupEmail"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="signupPassword">Password</label>
+        <input
+          type="password"
+          id="signupPassword"
+          placeholder="At least 8 characters"
+          autocomplete="new-password"
+          required
+          minlength="8"
+        >
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Enter your password again"
+          autocomplete="new-password"
+          required
+          minlength="8"
+        >
+
+        <button type="submit" class="auth-submit">
+          Create Account
+        </button>
+
+      </form>
+
+      <div id="authMessage" class="auth-message" role="status"></div>
+
+      <p class="auth-note">
+        Demo interface only. No account is created and no information is transmitted or stored.
+      </p>
+
+    </div>
+
+    <a href="index.html" class="back-home">
+      ← Back to NaturalDisasterBox
+    </a>
+  </main>
+
+  <script>
+    const loginTab = document.getElementById("loginTab");
+    const signupTab = document.getElementById("signupTab");
+
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+
+    const authMessage = document.getElementById("authMessage");
+
+    function showLogin() {
+      loginForm.hidden = false;
+      signupForm.hidden = true;
+
+      loginTab.classList.add("active");
+      signupTab.classList.remove("active");
+
+      authMessage.classList.remove("show");
+    }
+
+    function showSignup() {
+      loginForm.hidden = true;
+      signupForm.hidden = false;
+
+      loginTab.classList.remove("active");
+      signupTab.classList.add("active");
+
+      authMessage.classList.remove("show");
+    }
+
+    loginTab.addEventListener("click", showLogin);
+    signupTab.addEventListener("click", showSignup);
+
+    loginForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!loginForm.reportValidity()) return;
+
+      authMessage.textContent =
+        "Demo: Login form submitted successfully.";
+
+      authMessage.classList.add("show");
+    });
+
+    signupForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!signupForm.reportValidity()) return;
+
+      const password =
+        document.getElementById("signupPassword").value;
+
+      const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        document.getElementById("confirmPassword").setCustomValidity(
+          "Passwords do not match."
+        );
+
+        document.getElementById("confirmPassword").reportValidity();
+        return;
+      }
+
+      document.getElementById("confirmPassword").setCustomValidity("");
+
+      authMessage.textContent =
+        "Demo: Registration form submitted successfully.";
+
+      authMessage.classList.add("show");
+    });
+
+    document.getElementById("confirmPassword").addEventListener(
+      "input",
+      function() {
+        this.setCustomValidity("");
+      }
+    );
+  </script>
+
+</body>
+</html>
