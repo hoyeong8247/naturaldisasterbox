@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | NaturalDisasterBox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="app-page">
+
+  <header class="site-header">
+    <a class="brand" href="index.html">NaturalDisasterBox</a>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="auth-container">
+    <section class="auth-card">
+
+      <div class="auth-heading">
+        <h1>Welcome Back</h1>
+        <p>Sign in to your NaturalDisasterBox account</p>
+      </div>
+
+      <form class="auth-form" id="loginForm">
+
+        <div>
+          <label for="loginEmail">Email Address</label>
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Enter your email"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="loginPassword">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter your password"
+            minlength="8"
+            required
+          >
+        </div>
+
+        <button type="submit" class="auth-submit">
+          Log In
+        </button>
+
+      </form>
+
+      <div class="auth-switch">
+        <p>Don't have an account?</p>
+        <a href="signup.html">Create an Account</a>
+      </div>
+
+      <div class="auth-message" id="loginMessage"></div>
+
+      <p class="auth-note">
+        Demo interface only. No account is created and no information
+        is transmitted or stored.
+      </p>
+
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const message = document.getElementById("loginMessage");
+      message.textContent = "Demo only. Login functionality is not connected yet.";
+      message.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
